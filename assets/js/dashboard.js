@@ -151,6 +151,7 @@ function renderDashboard(record) {
         <button class="btn-action btn-pending" onclick="updateStatus('${app.id}', 'pending')">مراجعة</button>
         <button class="btn-action btn-accept" onclick="updateStatus('${app.id}', 'accepted')">قبول</button>
         <button class="btn-action btn-reject" onclick="updateStatus('${app.id}', 'rejected')">رفض</button>
+        <button class="btn-action btn-danger" onclick="deleteApplication('${app.id}')">حذف</button>
       </td>
     </tr>
   `).join('');
@@ -239,6 +240,27 @@ window.showDetails = function(appId) {
       <div class="detail-item"><strong>تاريخ التقديم</strong><span>${app.createdAt ? new Date(app.createdAt).toLocaleDateString('ar-EG') : '-'}</span></div>
     </div>
   `;
+};
+
+window.deleteApplication = async function(appId) {
+  if (!confirm('هل أنت متأكد من حذف هذا الطلب؟')) return;
+  try {
+    const res = await fetch('https://api.jsonbin.io/v3/b/6a597caff5f4af5e299a3a82', {
+      headers: { 'X-Master-Key': '$2a$10$tD7V0jOkd5x7PGodxlAQq.ZoppKxGGvTsj34m3e5bcjOGdMXbWOVO' }
+    });
+    const data = await res.json();
+    const record = data.record || {};
+    const applications = Array.isArray(record.applications) ? record.applications : [];
+    record.applications = applications.filter(item => item.id !== appId);
+    await saveData(record);
+    renderDashboard(record);
+    if (window.currentAppId === appId) {
+      document.getElementById('detailCard').innerHTML = '<p class="empty-state">تم حذف الطلب</p>';
+      window.currentAppId = null;
+    }
+  } catch (err) {
+    alert(err.message);
+  }
 };
 
 window.changeUserRole = async function(userId, role) {
