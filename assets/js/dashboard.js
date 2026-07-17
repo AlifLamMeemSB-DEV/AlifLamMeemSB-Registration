@@ -1,5 +1,6 @@
 const ADMIN_EMAIL = 'aliflammeemsb@gmail.com';
 const ADMIN_ROLE = 'admin';
+let currentRecord = null;
 
 function getStoredUser() {
   try {
@@ -27,6 +28,7 @@ async function loadData() {
     if (!res.ok) throw new Error('فشل جلب البيانات');
     const data = await res.json();
     const record = data.record || {};
+    currentRecord = record;
     localStorage.setItem('dashboard_data', JSON.stringify(record));
     renderDashboard(record);
   } catch (err) {
@@ -46,7 +48,84 @@ async function saveData(record) {
   if (!res.ok) throw new Error('فشل حفظ التحديث');
 }
 
+function getCurrentRecord() {
+  if (currentRecord) return currentRecord;
+  const raw = localStorage.getItem('dashboard_data');
+  if (!raw) return null;
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
+function downloadFile(content, filename, type) {
+  const blob = new Blob([content], { type });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
+
+function escapeCsvValue(value) {
+  const text = value == null ? '' : String(value);
+  if (/[",\n]/.test(text)) {
+    return `"${text.replace(/"/g, '""')}"`;
+  }
+  return text;
+}
+
+function exportApplications(format) {
+  const record = getCurrentRecord();
+  const applications = Array.isArray(record?.applications) ? record.applications : [];
+  if (!applications.length) {
+    alert('لا توجد طلبات لتصديرها');
+    return;
+  }
+
+  if (format === 'json') {
+    downloadFile(JSON.stringify(applications, null, 2), `applications-${new Date().toISOString().slice(0, 10)}.json`, 'application/json;charset=utf-8');
+    return;
+  }
+
+  const keys = [...new Set(applications.flatMap(app => Object.keys(app || {})))];
+  const rows = [keys.join(',')];
+  applications.forEach(app => {
+    rows.push(keys.map(key => escapeCsvValue(app[key])).join(','));
+  });
+  downloadFile(rows.join('\n'), `applications-${new Date().toISOString().slice(0, 10)}.csv`, 'text/csv;charset=utf-8');
+}
+
+function exportUsers(format) {
+  const record = getCurrentRecord();
+  const users = Array.isArray(record?.users) ? record.users : [];
+  if (!users.length) {
+    alert('لا توجد مستخدمين لتصديرهم');
+    return;
+  }
+
+  if (format === 'json') {
+    downloadFile(JSON.stringify(users, null, 2), `users-${new Date().toISOString().slice(0, 10)}.json`, 'application/json;charset=utf-8');
+    return;
+  }
+
+  const keys = [...new Set(users.flatMap(user => Object.keys(user || {})))];
+  const rows = [keys.join(',')];
+  users.forEach(user => {
+    rows.push(keys.map(key => escapeCsvValue(user[key])).join(','));
+  });
+  downloadFile(rows.join('\n'), `users-${new Date().toISOString().slice(0, 10)}.csv`, 'text/csv;charset=utf-8');
+}
+
+window.exportApplications = exportApplications;
+window.exportUsers = exportUsers;
+
 function renderDashboard(record) {
+  currentRecord = record;
   const applications = Array.isArray(record.applications) ? record.applications : [];
   const users = Array.isArray(record.users) ? record.users : [];
   const user = getStoredUser();
@@ -228,6 +307,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   setupViews();
   document.getElementById('refreshBtn').addEventListener('click', loadData);
+  document.getElementById('exportCsvBtn').addEventListener('click', () => exportApplications('csv'));
+  document.getElementById('exportJsonBtn').addEventListener('click', () => exportApplications('json'));
+  document.getElementById('exportUsersCsvBtn').addEventListener('click', () => exportUsers('csv'));
+  document.getElementById('exportUsersJsonBtn').addEventListener('click', () => exportUsers('json'));
   document.getElementById('logoutAdmin').addEventListener('click', () => {
     localStorage.removeItem('alif_user');
     redirectToHome();
