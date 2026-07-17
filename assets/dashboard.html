@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوحة الإدارة | ألف لام ميم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <!-- FavIcon -->
+  <link rel="icon" type="image/x-icon" href="photos/logo-img.png">
+</head>
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">﷽</div>
+        <div>
+          <h1>ألف لام ميم</h1>
+          <p>لوحة الإدارة</p>
+        </div>
+      </div>
+
+      <div class="sidebar-user" id="adminInfo"></div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-btn active" data-view="applications"><i class="fas fa-file-alt"></i> الطلبات</button>
+        <button class="nav-btn" data-view="users"><i class="fas fa-users"></i> المستخدمين</button>
+        <button class="nav-btn" data-view="details"><i class="fas fa-eye"></i> تفاصيل الطلب</button>
+      </nav>
+
+      <button class="logout-btn" id="logoutAdmin"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</button>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div>
+          <h2 id="panelTitle">الطلبات</h2>
+          <p id="panelSubtitle">عرض جميع الطلبات المقدمة من الطلاب</p>
+        </div>
+        <button class="refresh-btn" id="refreshBtn"><i class="fas fa-sync"></i> تحديث</button>
+      </header>
+
+      <section id="applicationsView" class="panel-view active">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span>إجمالي الطلبات</span>
+            <strong id="totalApps">0</strong>
+          </div>
+          <div class="stat-card">
+            <span>قيد المراجعة</span>
+            <strong id="pendingApps">0</strong>
+          </div>
+          <div class="stat-card">
+            <span>مقبولة</span>
+            <strong id="acceptedApps">0</strong>
+          </div>
+          <div class="stat-card">
+            <span>مرفوضة</span>
+            <strong id="rejectedApps">0</strong>
+          </div>
+        </div>
+        <div class="table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>الاسم</th>
+                <th>البريد</th>
+                <th>الحالة</th>
+                <th>التاريخ</th>
+                <th>الإجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="applicationsTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="usersView" class="panel-view">
+        <div class="table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>الاسم</th>
+                <th>البريد</th>
+                <th>الدور</th>
+                <th>آخر دخول</th>
+                <th>الإجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="usersTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="detailsView" class="panel-view">
+        <div class="detail-card" id="detailCard">
+          <p class="empty-state">اختر طلبًا من قائمة الطلبات لعرض التفاصيل</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

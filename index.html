@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أكاديمية ألف لام ميم · بوابة القبول</title>
+  <!-- Google Identity Services -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <!-- FavIcon -->
+  <link rel="icon" type="image/x-icon" href="assets/photos/logo-img.png">
+</head>
+<body>
+  <!-- ============================================================
+  NAVBAR
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo" id="navLogo">
+      <img src="assets/photos/logo-img.png" alt="AlifLamMeem Logo" class="nav-logo-img" width="80" href="#">
+      <span class="nav-logo-icon">﷽</span>
+      <div class="nav-brand-text">
+        <div class="nav-logo-text" data-ar="ألف لام ميم" data-en="AlifLamMeem">ألف لام ميم</div>
+        <div class="nav-logo-sub">Quran Academy</div>
+      </div>
+      <div class="navbar-auth" id="authSection"></div>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-actions" id="navActions">
+      <button class="nav-btn nav-btn-outline" id="statusBtn" data-ar="حالة الطلب" data-en="My Status">حالة الطلب</button>
+      <div class="lang-switcher nav-lang-switcher" id="langSwitcher">
+        <button class="lang-btn active" data-lang="ar" id="langAr">عربي</button>
+        <button class="lang-btn" data-lang="en" id="langEn">English</button>
+      </div>
+      <button class="nav-btn nav-btn-primary" id="registerBtn" data-ar="تسجيل جديد" data-en="Register Now">تسجيل جديد</button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+  PAGE: HOME
+  ============================================================ -->
+  <div class="page active" id="page-home">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-star"></i>
+          <span data-ar="أكاديمية معتمدة" data-en="Accredited Academy">أكاديمية معتمدة</span>
+        </div>
+        <h1 class="hero-title">
+          <span data-ar="تعلم القرآن" data-en="Learn the Quran">تعلم القرآن</span><br>
+          <span data-ar="بروح العصر" data-en="with a Modern Spirit">بروح العصر</span>
+        </h1>
+        <p class="hero-subtitle" data-ar="أكاديمية ألف لام ميم تقدم برنامجاً متكاملاً لحفظ القرآن الكريم وتجويده بإشراف نخبة من المعلمين المتخصصين."
+           data-en="AlifLamMeem Academy offers a comprehensive program for Quran memorization and Tajweed under the guidance of specialized teachers.">
+          أكاديمية ألف لام ميم تقدم برنامجاً متكاملاً لحفظ القرآن الكريم وتجويده بإشراف نخبة من المعلمين المتخصصين.
+        </p>
+        <div class="hero-actions">
+          <button class="hero-btn hero-btn-primary" id="heroRegisterBtn">
+            <i class="fas fa-pen-fancy"></i>
+            <span data-ar="سجل الآن" data-en="Register Now">سجل الآن</span>
+          </button>
+          <button class="hero-btn hero-btn-secondary" id="heroStatusBtn">
+            <i class="fas fa-search"></i>
+            <span data-ar="تابع طلبك" data-en="Track Application">تابع طلبك</span>
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-number">500+</span>
+            <span class="hero-stat-label" data-ar="طالب مسجل" data-en="Students">طالب مسجل</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">30+</span>
+            <span class="hero-stat-label" data-ar="معلم متخصص" data-en="Teachers">معلم متخصص</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number">5</span>
+            <span class="hero-stat-label" data-ar="سنوات التميز" data-en="Years of Excellence">سنوات التميز</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-image-card">
+          <div class="hero-image-icon">📖</div>
+          <div class="hero-image-title" data-ar="رحلة القرآن" data-en="Quran Journey">رحلة القرآن</div>
+          <div class="hero-image-text" data-ar="انضم إلى آلاف الطلاب في رحلة حفظ وتجويد القرآن الكريم"
+               data-en="Join thousands of students in the journey of Quran memorization and Tajweed">
+            انضم إلى آلاف الطلاب في رحلة حفظ وتجويد القرآن الكريم
+          </div>
+          <div class="hero-image-pattern">
+            <span>📿</span>
+            <span>🕌</span>
+            <span>🌟</span>
+            <span>📚</span>
+            <span>☪️</span>
+            <span>✨</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+      <div class="section-header">
+        <div class="section-tag">✦</div>
+        <h2 class="section-title" data-ar="مميزات الأكاديمية" data-en="Academy Features">مميزات الأكاديمية</h2>
+        <p class="section-subtitle" data-ar="نقدم بيئة تعليمية متكاملة تجمع بين الأصالة والحداثة"
+           data-en="We offer an integrated educational environment combining authenticity and modernity">
+          نقدم بيئة تعليمية متكاملة تجمع بين الأصالة والحداثة
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">👨‍🏫</div>
+          <h3 class="feature-title" data-ar="معلمون متخصصون" data-en="Specialized Teachers">معلمون متخصصون</h3>
+          <p class="feature-desc" data-ar="نخبة من المعلمين الحاصلين على إجازات في القراءات العشر"
+             data-en="Elite teachers with Ijazah in the ten Qira'at">
+            نخبة من المعلمين الحاصلين على إجازات في القراءات العشر
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3 class="feature-title" data-ar="برامج مخصصة" data-en="Customized Programs">برامج مخصصة</h3>
+          <p class="feature-desc" data-ar="خطط دراسية تناسب جميع المستويات والأعمار"
+             data-en="Study plans suitable for all levels and ages">
+            خطط دراسية تناسب جميع المستويات والأعمار
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💻</div>
+          <h3 class="feature-title" data-ar="تعليم عن بعد" data-en="Online Learning">تعليم عن بعد</h3>
+          <p class="feature-desc" data-ar="منصة تفاعلية تتيح لك التعلم من أي مكان في العالم"
+             data-en="An interactive platform that allows you to learn from anywhere in the world">
+            منصة تفاعلية تتيح لك التعلم من أي مكان في العالم
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3 class="feature-title" data-ar="متابعة مستمرة" data-en="Continuous Tracking">متابعة مستمرة</h3>
+          <p class="feature-desc" data-ar="تقارير دورية عن تقدمك وإنجازاتك في الحفظ والتجويد"
+             data-en="Regular reports on your progress and achievements in memorization and Tajweed">
+            تقارير دورية عن تقدمك وإنجازاتك في الحفظ والتجويد
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================================================
+  PAGE: REGISTER
+  ============================================================ -->
+  <div class="page" id="page-register">
+    <div class="register-page">
+      <div class="section-header">
+        <div class="section-tag">✦</div>
+        <h2 class="section-title" data-ar="تقديم طلب التسجيل" data-en="Submit Application">تقديم طلب التسجيل</h2>
+        <p class="section-subtitle" data-ar="املأ النموذج التالي للتقديم في أكاديمية ألف لام ميم"
+           data-en="Fill out the form below to apply to AlifLamMeem Academy">
+          املأ النموذج التالي للتقديم في أكاديمية ألف لام ميم
+        </p>
+      </div>
+      <form class="register-form" id="studentRegisterForm">
+        <div class="form-group">
+          <label data-ar="الاسم الكامل *" data-en="Full Name *">الاسم الكامل *</label>
+          <input class="form-control" id="fullName" placeholder="مثال: أحمد بن محمد" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-ar="العمر" data-en="Age">العمر</label>
+            <input class="form-control" id="age" type="number" min="7" max="99" placeholder="16">
+          </div>
+          <div class="form-group">
+            <label data-ar="الجنس" data-en="Gender">الجنس</label>
+            <select class="form-control" id="gender">
+              <option value="Male">ذكر</option>
+              <option value="Female">أنثى</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-ar="الدولة" data-en="Country">الدولة</label>
+            <input class="form-control" id="country" placeholder="مصر">
+          </div>
+          <div class="form-group">
+            <label data-ar="المدينة" data-en="City">المدينة</label>
+            <input class="form-control" id="city" placeholder="القاهرة">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-ar="رقم الهاتف" data-en="Phone">رقم الهاتف</label>
+            <input class="form-control" id="phone" placeholder="+20 100 000 0000">
+          </div>
+          <div class="form-group">
+            <label data-ar="واتساب" data-en="WhatsApp">واتساب</label>
+            <input class="form-control" id="whatsapp" placeholder="نفس رقم الهاتف">
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-ar="البريد الإلكتروني *" data-en="Email *">البريد الإلكتروني *</label>
+          <input class="form-control" id="email" type="email" placeholder="student@example.com" required>
+        </div>
+        <div class="form-group">
+          <label data-ar="مستوى حفظ القرآن" data-en="Quran Memorization Level">مستوى حفظ القرآن</label>
+          <input class="form-control" id="memorization" placeholder="مثال: 5 أجزاء">
+        </div>
+        <div class="form-group">
+          <label data-ar="خبرة التجويد" data-en="Tajweed Experience">خبرة التجويد</label>
+          <input class="form-control" id="tajweed" placeholder="مبتدئ / متوسط">
+        </div>
+        <div class="form-group">
+          <label data-ar="اللغة المفضلة" data-en="Preferred Language">اللغة المفضلة</label>
+          <select class="form-control" id="language">
+            <option value="Arabic">العربية</option>
+            <option value="English">الإنجليزية</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-ar="ملاحظات إضافية" data-en="Additional Notes">ملاحظات إضافية</label>
+          <textarea class="form-control" id="notes" rows="3" placeholder="أي طلبات خاصة"></textarea>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="agreement" required>
+          <label for="agreement" data-ar="أوافق على شروط وأحكام الأكاديمية" data-en="I agree to the academy's terms and conditions">
+            أوافق على شروط وأحكام الأكاديمية
+          </label>
+        </div>
+        <button type="submit" class="hero-btn hero-btn-primary" style="width:100%; justify-content:center;">
+          <i class="fas fa-paper-plane"></i>
+          <span data-ar="إرسال الطلب" data-en="Submit Application">إرسال الطلب</span>
+        </button>
+        <button type="button" class="hero-btn hero-btn-secondary" style="width:100%; justify-content:center; margin-top:12px;" id="backFromRegister">
+          <i class="fas fa-arrow-right"></i>
+          <span data-ar="العودة للرئيسية" data-en="Back to Home">العودة للرئيسية</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+  PAGE: STATUS
+  ============================================================ -->
+  <div class="page" id="page-status">
+    <div class="status-page">
+      <div class="section-header">
+        <div class="section-tag">✦</div>
+        <h2 class="section-title" data-ar="حالة طلبك" data-en="Your Application Status">حالة طلبك</h2>
+      </div>
+      <div class="status-card" id="statusDisplay">
+        <div class="text-center" style="padding: 40px 0;">
+          <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--gold);"></i>
+          <p style="margin-top: 16px;" data-ar="جاري تحميل البيانات..." data-en="Loading data...">جاري تحميل البيانات...</p>
+        </div>
+      </div>
+      <button class="hero-btn hero-btn-secondary" style="width:100%; justify-content:center; margin-top:20px;" id="backFromStatus">
+        <i class="fas fa-arrow-right"></i>
+        <span data-ar="العودة للرئيسية" data-en="Back to Home">العودة للرئيسية</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+  FOOTER
+  ============================================================ -->
+  <footer class="footer" style="margin-top: 40px;">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="footer-brand-text">﷽ ألف لام ميم</div>
+        <p class="footer-brand-desc" data-ar="أكاديمية متخصصة في تعليم القرآن الكريم وعلومه بإشراف نخبة من المعلمين."
+           data-en="A specialized academy for teaching the Holy Quran and its sciences under the supervision of elite teachers.">
+          أكاديمية متخصصة في تعليم القرآن الكريم وعلومه بإشراف نخبة من المعلمين.
+        </p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/201068339196" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-heading" data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a onclick="navigateTo('home')" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+          <li><a href="#features" data-ar="المميزات" data-en="Features">المميزات</a></li>
+          <li><a onclick="navigateTo('register')" data-ar="التسجيل" data-en="Register">التسجيل</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:aliflammeemsb@gmail.com"><i class="fas fa-envelope"></i> aliflammeemsb@gmail.com</a></li>
+          <li><a href="tel:+201068339196"><i class="fas fa-phone"></i> +20 10 6833 9196</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading" data-ar="الدعم" data-en="Support">الدعم</h4>
+        <ul class="footer-links">
+          <li><a onclick="navigateTo('status')" data-ar="حالة الطلب" data-en="Application Status">حالة الطلب</a></li>
+          <li><a href="#" data-ar="الدعم الفني" data-en="Technical Support">الدعم الفني</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 <span data-ar="أكاديمية ألف لام ميم" data-en="AlifLamMeem Academy">أكاديمية ألف لام ميم</span> · 
+      <span data-ar="جميع الحقوق محفوظة" data-en="All Rights Reserved">جميع الحقوق محفوظة</span>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+  TOAST CONTAINER
+  ============================================================ -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- ============================================================
+  JAVASCRIPT
+  ============================================================ -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
